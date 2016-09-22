@@ -10,8 +10,10 @@
         <!--<item name="android:src">@mipmap/action_add</item>-->
     <!--</style>-->
 
-    <style name="AppTheme" parent="@style/Theme.AppCompat.NoActionBar">
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
         <item name="android:actionOverflowButtonStyle">@style/OverFlow</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
     <style name="OverFlow" parent="@style/Widget.AppCompat.ActionButton.Overflow">

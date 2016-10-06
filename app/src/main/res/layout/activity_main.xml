@@ -28,5 +28,42 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:orientation="horizontal"
-        android:background="@drawable/tab_bg"/>
+        android:background="@drawable/tab_bg">
+
+        <me.yumengsong.ychat.ChangeColorIconWithText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            app:color="#ff45c01a"
+            app:icon="@drawable/tab_chats"
+            app:text="@string/tab_chats"
+            app:text_size="12sp" />
+
+        <me.yumengsong.ychat.ChangeColorIconWithText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            app:color="#ff45c01a"
+            app:icon="@drawable/tab_contacts"
+            app:text="@string/tab_contacts"
+            app:text_size="12sp" />
+
+        <me.yumengsong.ychat.ChangeColorIconWithText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            app:color="#ff45c01a"
+            app:icon="@drawable/tab_discover"
+            app:text="@string/tab_discover"
+            app:text_size="12sp" />
+
+        <me.yumengsong.ychat.ChangeColorIconWithText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            app:color="#ff45c01a"
+            app:icon="@drawable/tab_me"
+            app:text="@string/tab_me"
+            app:text_size="12sp" />
+    </LinearLayout>
 </LinearLayout>

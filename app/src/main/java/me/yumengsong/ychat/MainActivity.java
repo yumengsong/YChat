@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private String[] mTabTitles = new String[]{
             "FirstTab", "SecondTab", "ThirdTab", "FourthTab"
     };
+    private List<ChangeColorIconWithText> mTabIndicators = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         mViewPager = (ViewPager) findViewById(R.id.view_pager);
+
     }
 
     private void initData() {

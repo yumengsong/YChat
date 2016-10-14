@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:hyman="http://schemas.android.com/apk/res/me.yumengsong.ychat"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -31,26 +32,32 @@
         android:background="@drawable/tab_bg">
 
         <me.yumengsong.ychat.ChangeColorIconWithText
+            android:id="@+id/id_indicator_one"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:padding="5dp"
-            app:color="#ff45c01a"
-            app:icon="@drawable/tab_chats"
-            app:text="@string/tab_chats"
-            app:text_size="12sp" />
+            hyman:color="#ff45c01a"
+            hyman:icon="@drawable/tab_chats"
+            hyman:text="@string/tab_chats"
+            hyman:text_size="12sp" />
 
         <me.yumengsong.ychat.ChangeColorIconWithText
+            android:id="@+id/id_indicator_two"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:padding="5dp"
-            app:color="#ff45c01a"
-            app:icon="@drawable/tab_contacts"
-            app:text="@string/tab_contacts"
-            app:text_size="12sp" />
+            hyman:color="#ff45c01a"
+            hyman:icon="@drawable/tab_contacts"
+            hyman:text="@string/tab_contacts"
+            hyman:text_size="12sp" />
 
         <me.yumengsong.ychat.ChangeColorIconWithText
+            android:id="@+id/id_indicator_three"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:padding="5dp"
             app:color="#ff45c01a"
             app:icon="@drawable/tab_discover"
@@ -58,8 +65,10 @@
             app:text_size="12sp" />
 
         <me.yumengsong.ychat.ChangeColorIconWithText
+            android:id="@+id/id_indicator_four"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:padding="5dp"
             app:color="#ff45c01a"
             app:icon="@drawable/tab_me"

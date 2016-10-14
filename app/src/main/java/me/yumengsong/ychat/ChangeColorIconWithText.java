@@ -21,14 +21,15 @@ import static java.lang.Boolean.TRUE;
 /**
  * Custom View:
  * 1. attr.xml
- * 2. onMeasure
- * 3. onDraw
- * Created by yumeng on 10/6/16.
+ * 2. 布局文件中使用
+ * 3. 构造方法中获取自定义属性
+ * 4. onMeasure
+ * 5. onDraw
  *
  * 原理：
- * 1.先绘制一个纯色面板
- * 2.在纯色面板之上绘制Icon
- * 3.Xfermode 显示两者交集(icon)，且拥有前者颜色(纯色)
+ * 1. 先绘制一个纯色面板
+ * 2. 在纯色面板之上绘制Icon
+ * 3. xfermode（设置为DST_IN） 显示两者交集(icon)，且拥有前者颜色(纯色)
  */
 
 public class ChangeColorIconWithText extends View {

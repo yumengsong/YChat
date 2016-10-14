@@ -13,6 +13,11 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 1. Toolbar (Change 'OverFlowButtonStyle' to a 'plus' icon. 反射，改变一些设置)
+ * 2. View Pager + Fragment （onPageScrolled()）
+ * 3. TabIndicator (custom view)
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public static final int INDEX_INDICATOR_ONE = 0;
     public static final int INDEX_INDICATOR_TWO = 1;
@@ -138,6 +143,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        clickTab(v);
+    }
+
+    /**
+     * 点击某个Tab，先重置其它Tab状态
+     *
+     * @param v
+     */
+    private void clickTab(View v) {
         resetOtherTabs();
 
         switch (v.getId()) {

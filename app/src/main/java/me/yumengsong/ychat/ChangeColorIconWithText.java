@@ -24,6 +24,11 @@ import static java.lang.Boolean.TRUE;
  * 2. onMeasure
  * 3. onDraw
  * Created by yumeng on 10/6/16.
+ *
+ * 原理：
+ * 1.先绘制一个纯色面板
+ * 2.在纯色面板之上绘制Icon
+ * 3.Xfermode 显示两者交集(icon)，且拥有前者颜色(纯色)
  */
 
 public class ChangeColorIconWithText extends View {
@@ -165,8 +170,33 @@ public class ChangeColorIconWithText extends View {
         }
     }
 
+    public static final String INSTANCE_STATUS = "instance_status";
+    public static final String STATUS_ALPHA = "status_alpha";
 
-//    private int mColor = 0xFF45C01A;
+    @Override
+    protected Parcelable onSaveInstanceState() {
+        /**
+         * 当应用长期处于后台（主要情况）或翻转屏幕时，会被系统自动回收，因此我们要保存系统状态和自己的状态数据，准备在onRestoreInstanceState方法中还原
+         */
+        Bundle bundle = new Bundle();
+        bundle.putParcelable(INSTANCE_STATUS, super.onSaveInstanceState()); //存储系统自动保存的状态
+        bundle.putFloat(STATUS_ALPHA, mAlpha); //存储自己的数据alpha值
+
+        return bundle;
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Parcelable state) {
+        if (state instanceof Bundle) { //如果收到的state是bundle类型，说明之前保存了我们自己的数据，接下来要还原
+            Bundle bundle = (Bundle) state;
+            mAlpha = bundle.getFloat(STATUS_ALPHA); //还原之前保存的alpha值
+            super.onRestoreInstanceState(bundle.getParcelable(INSTANCE_STATUS)); //还原系统之前自动保存的状态
+            return; //return后，不再执行末尾的super.onRestoreInstanceState(state);
+        }
+        super.onRestoreInstanceState(state);
+    }
+
+    //    private int mColor = 0xFF45C01A;
 //    private Bitmap mIconBitmap;
 //    private String mText = "微信";
 //    private int mTextSize = (int) TypedValue.applyDimension(
